@@ -1,5 +1,5 @@
 import 'package:decimal/decimal.dart';
-
+import 'package:rational/rational.dart';
 /**
  * @Author: Sky24n
  * @GitHub: https://github.com/Sky24n
@@ -131,7 +131,8 @@ class NumUtil {
 
   /// 除
   static Decimal divideDecStr(String a, String b) {
-    return Decimal.parse(a) / Decimal.parse(b);
+    Rational value = Decimal.parse(a) / Decimal.parse(b);
+    return value.toDecimal();
   }
 
   /// 余数
